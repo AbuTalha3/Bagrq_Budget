@@ -1,0 +1,27 @@
+<header>
+  <div class="toolbar">
+    <%= link_to image_tag("https://img.icons8.com/officel/344/back.png"),groups_path, class: "back_btn" %>
+    <h5 class="toolbar__groups">New Transaction</h5>
+  </div>
+</header>
+<section class="main-container">
+  <div class="form-container">
+    <%= form_with model: @entity do |form| %>
+      <div class="field">
+        <%= form.label :name, style: "display: block" %>
+        <%= form.text_field :name,class: "input" %>
+      </div>
+      <div class="field">
+        <%= form.label :amount, style: "display: block" %>
+        <%= form.number_field :amount, step: 1,class: "input" %>
+      </div>
+      <div class="form-field">
+        <%= form.label :group_id %>
+        <%= form.collection_select :group_id, @groups, :id, :name,:prompt => true, class: 'form-control'  %>
+      </div>
+      <div class="splash-buttons">
+        <%= form.submit "Submit", class: "form-btn" %>
+      </div>
+    <% end %>
+  </div>
+</section>

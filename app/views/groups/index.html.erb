@@ -1,0 +1,23 @@
+<header class="home">
+<div class="toolbar">
+  <%= link_to image_tag("https://img.icons8.com/officel/344/back.png"),groups_path, class: "back_btn" %>
+  <h5 class="toolbar__groups">Groups</h5>
+</div>
+</header>
+
+<% if flash[:notice] %>
+  <div class="flash-notice">
+    <p><%= notice %></p>
+  </div>
+<% end %>
+
+<section class="main-container">
+  <div id="groups">
+    <% @groups.each do |group| %>
+      <%= render group %>
+    <% end %>
+  </div>
+  <div class="splash-buttons">
+    <%= link_to "New group", new_group_path %>
+  </div>
+</section>

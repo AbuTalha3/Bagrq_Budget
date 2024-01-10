@@ -1,0 +1,7 @@
+<header>
+<div class="toolbar">
+  <%= link_to image_tag("https://img.icons8.com/officel/344/back.png"),groups_path, class: "back_btn" %>
+  <h5 class="toolbar__groups">New Group</h5>
+  </div>
+</header>
+<%= render "form", group: @group %>
